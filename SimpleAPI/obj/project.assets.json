@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/arturaipov/Projects/SimpleAPI/SimpleAPI/SimpleAPI.csproj",
+      "projectUniqueName": "/Users/arturaipov/Projects/API/SimpleAPI/SimpleAPI/SimpleAPI.csproj",
       "projectName": "SimpleAPI",
-      "projectPath": "/Users/arturaipov/Projects/SimpleAPI/SimpleAPI/SimpleAPI.csproj",
+      "projectPath": "/Users/arturaipov/Projects/API/SimpleAPI/SimpleAPI/SimpleAPI.csproj",
       "packagesPath": "/Users/arturaipov/.nuget/packages/",
-      "outputPath": "/Users/arturaipov/Projects/SimpleAPI/SimpleAPI/obj/",
+      "outputPath": "/Users/arturaipov/Projects/API/SimpleAPI/SimpleAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/arturaipov/.nuget/NuGet/NuGet.Config"
