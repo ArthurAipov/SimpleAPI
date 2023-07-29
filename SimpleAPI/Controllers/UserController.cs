@@ -18,7 +18,7 @@ namespace SimpleAPI.Controllers
         public async Task<ActionResult> GetUsers()
         {
             // получение списка всех пользователей
-            var response = await Task.Run(() => Ok(Json(GlobalSettings.users)));
+            var response = await Task.Run(() => Ok(Json(Settings.users)));
             return response;
         }
 
@@ -27,7 +27,7 @@ namespace SimpleAPI.Controllers
         public async Task<ActionResult> DeleteUser(int id)
         {
             //поиск пользователя по id
-            var user = GlobalSettings.users.FirstOrDefault(x => x.id == id);
+            var user = Settings.users.FirstOrDefault(x => x.id == id);
             // проверка существует ли пользователь с таким id
             if (user == null)
             {
@@ -38,9 +38,9 @@ namespace SimpleAPI.Controllers
             else
             {
                 // Удаление пользователя
-                GlobalSettings.DeleteUser(user);
+                Settings.DeleteUser(user);
                 // вывод списка после удаления пользователя
-                var response = await Task.Run(() => Ok(Json(GlobalSettings.users)));
+                var response = await Task.Run(() => Ok(Json(Settings.users)));
                 return response;
             }
         }
@@ -50,14 +50,14 @@ namespace SimpleAPI.Controllers
         public async Task<ActionResult> CreateUser(User user, int typrId)
         {
             // проверка на наличие пользователей
-            if (GlobalSettings.users.Count == 0)
+            if (Settings.users.Count == 0)
                 // установка пользователю уникальный id
                 user.id = 1;
             else
                 // установка пользователю уникальный id
-                user.id = GlobalSettings.users.Last().id + 1;
+                user.id = Settings.users.Last().id + 1;
             // проверка выбранного типа
-            var type = GlobalSettings.types.FirstOrDefault(x => x.id == typrId);
+            var type = Settings.types.FirstOrDefault(x => x.id == typrId);
             // если тип не найден
             if (type == null)
                 // сообщение о том что данного типа нет
@@ -66,9 +66,9 @@ namespace SimpleAPI.Controllers
             user.type = type;
             user.typeId = typrId;
             // создание пользователя
-            GlobalSettings.CreateUser(user);
+            Settings.CreateUser(user);
             // вывод списка всех пользователей
-            var response = await Task.Run(() => Ok(Json(GlobalSettings.users)));
+            var response = await Task.Run(() => Ok(Json(Settings.users)));
             return response;
 
         }
@@ -78,7 +78,7 @@ namespace SimpleAPI.Controllers
         public async Task<ActionResult> GetById(int id)
         {
             //поиск пользователя по id
-            var user = GlobalSettings.users.FirstOrDefault(x => x.id == id);
+            var user = Settings.users.FirstOrDefault(x => x.id == id);
             // проверка существует ли пользователь с таким id
             if (user == null)
             {
@@ -99,14 +99,14 @@ namespace SimpleAPI.Controllers
         public async Task<ActionResult> UpdateClient(int id, User newUser)
         {
             // поиск пользователя
-            var user = GlobalSettings.users.FirstOrDefault(x => x.id == id);
+            var user = Settings.users.FirstOrDefault(x => x.id == id);
             // проверка существует ли пользователь с таким id
             if (user == null)
                 // вывод сообщения о том что такого пользователя нет
                 return await Task.Run(() => NotFound(Json(new Response("This user is not found"))));
             // применение новых параметров для старого пользователя
-            user.name = newUser.name;
-            user.age = newUser.age;
+            user.login = newUser.login;
+            user.password = newUser.password;
             // вывод новых данных о пользователе 
             return await Task.Run(() => Ok(Json(user)));
         }

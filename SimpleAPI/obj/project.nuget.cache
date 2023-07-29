@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r5Wg/QrsySihBtQTBmZsqgvUb7fne9OfdShYnfXXNPLL5fjM0LjO4NBR49nflZRyA9tl+wQ7JN8aqKcixRI3Pw==",
+  "dgSpecHash": "meWUj00MfE0Ff4qoSift5ZXXB75BkUL3jiizen1lXYJ7qvcg11dizqkHhUhAtbhf9O9ly1FCZ/JlSZ0iJxD9kg==",
   "success": true,
-  "projectFilePath": "/Users/arturaipov/Projects/API/SimpleAPI/SimpleAPI/SimpleAPI.csproj",
+  "projectFilePath": "/Users/arturaipov/Documents/Work/SimpleAPI/SimpleAPI/SimpleAPI.csproj",
   "expectedPackageFiles": [
     "/Users/arturaipov/.nuget/packages/microsoft.aspnetcore.openapi/7.0.5/microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "/Users/arturaipov/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

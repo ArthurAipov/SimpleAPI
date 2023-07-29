@@ -3,17 +3,17 @@ namespace SimpleAPI.Models
 {
     public class User
     {
-        public User(int id, int age, string name, int typeId, Type type)
+        public User(int id, string login, int typeId, Type type, string password)
         {
-            this.type = type;
-            this.age = age;
-            this.name = name;
             this.id = id;
+            this.login = login;
+            this.password = password;
+            this.type = type;
             this.typeId = typeId;
         }
-        public int age { get; set; }
         public int id { get; set; }
-        public string name { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
         public int typeId { get; set; }
         public Type type { get; set; }
     }
