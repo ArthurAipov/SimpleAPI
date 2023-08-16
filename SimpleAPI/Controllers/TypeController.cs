@@ -17,18 +17,18 @@ namespace SimpleAPI.Controllers
         [HttpGet]
         public async Task<ActionResult> GetTypes()
         {
-            return await Task.Run(() => Ok(Json(Settings.types)));
+            return await Task.Run(() => Ok(Json(TypeSettings.types)));
         }
 
         [HttpPost]
         public async Task<ActionResult> CreateType(Models.Type type)
         {
-            if (Settings.types.Count == 0)
+            if (TypeSettings.types.Count == 0)
                 type.id = 1;
             else
-                type.id = Settings.types.Last().id + 1;
-            Settings.CreateType(type);
-            return await Task.Run(() => Ok(Json(Settings.types)));
+                type.id = TypeSettings.types.Last().id + 1;
+            TypeSettings.CreateType(type);
+            return await Task.Run(() => Ok(Json(TypeSettings.types)));
         }
 
     }

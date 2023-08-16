@@ -3,7 +3,7 @@ namespace SimpleAPI.Models
 {
     public class Client
     {
-        public Client(int id, int age, string name, string surename, string patronymic, User user, int userId, List<Order> orders)
+        public Client(int id, int age, string name, string surename, string patronymic, User user, int userId, List<Product> basket)
         {
             this.id = id;
             this.age = age;
@@ -12,7 +12,7 @@ namespace SimpleAPI.Models
             this.patronymic = patronymic;
             this.surename = surename;
             this.name = name;
-            this.orders = orders;
+            this.basket = basket;
         }
 
         public int id { get; set; }
@@ -22,7 +22,7 @@ namespace SimpleAPI.Models
         public string patronymic { get; set; }
         public User user { get; set; }
         public int userId { get; set; }
-        public List<Order> orders = new List<Order>();
+        public List<Product> basket = new List<Product>();
 
 
     }
